@@ -1,4 +1,40 @@
+# Releases
+
 ## Next
+
+## 0.10.0 (2017-07-31)
+
+### Breaking
+
+* Update Google AdMob SDK for iOS to v7.21.0.
+
+### Fixed
+
+* Avoid webview redraws the background. ([@warcry2000](https://github.com/wf9a5m75) in [#95](https://github.com/ratson/cordova-plugin-admob-free/pull/95))
+
+
+## 0.9.0 (2017-05-07)
+
+### Breaking
+
+* Update Google AdMob SDK for iOS to v7.20.0.
+
+## 0.8.0 (2017-03-22)
+
+### Breaking
+
+* Update Google AdMob SDK for iOS to v7.19.0.
+
+## 0.7.0 (2017-02-21)
+
+### Added
+
+* Add availability methods for interstitials and reward videos. ([@vintage](https://github.com/vintage) in [#54](https://github.com/ratson/cordova-plugin-admob-free/pull/54))
+
+### Breaking
+
+* Update Google AdMob SDK for iOS to v7.17.0.
+
 
 ## 0.6.1 (2017-01-25)
 
@@ -9,6 +45,7 @@
 ### Fixed
 
 * Fix iOS InterstitialAd does not call failure callback. ([@becvert](https://github.com/becvert) in [#47](https://github.com/ratson/cordova-plugin-admob-free/pull/47))
+
 
 ## 0.6.0 (2017-01-16)
 
@@ -44,6 +81,7 @@ it is strongly recommended to migrate to new API and give feedback.
 * Promise APIs.
 * Events now have namespace.
 * Add [mediation example](https://github.com/ratson/cordova-plugin-admob-free/tree/master/examples/mediation)
+
 
 ## 0.5.1 (2016-12-08)
 
