@@ -1,11 +1,8 @@
-import {buildEvents, exec, translateOptions} from './utils'
+import { buildEvents, exec, translateOptions } from './utils'
 
 /**
  * Interstitial config object.
- * @typedef {Object} InterstitialConfig
- * @property {string} [id=TESTING_AD_ID] - Ad Unit ID
- * @property {boolean} [isTesting=false] - receiving test ad
- * @property {boolean} [autoShow=false] - auto show ad when loaded
+ * @typedef {BaseConfig} InterstitialConfig
  */
 
 const events = buildEvents('interstitial', [
@@ -26,7 +23,7 @@ class Interstitial {
 
   /**
    * @protected
-   * @param {InterstitialConfig} opts - initial config.
+   * @param {InterstitialConfig} opts - Initial config.
    */
   constructor(opts) {
     this.config({
@@ -36,8 +33,9 @@ class Interstitial {
 
   /**
    * Update config.
-   * @param {InterstitialConfig} opts - new config.
-   * @return {InterstitialConfig} updated config.
+   *
+   * @param {InterstitialConfig} opts - New config.
+   * @returns {InterstitialConfig} Updated config.
    */
   config(opts) {
     this._config = {
@@ -48,7 +46,7 @@ class Interstitial {
   }
 
   /**
-   * @return {Promise}
+   * @returns {Promise} Excutaion result promise.
    */
   prepare() {
     const options = {
@@ -60,11 +58,18 @@ class Interstitial {
   }
 
   /**
-   * @return {Promise}
+   * @returns {Promise} Excutaion result promise.
    */
   show() {
     return exec('showInterstitialAd', [true])
   }
+
+  /**
+   * @returns {Promise} Excutaion result promise.
+   */
+  isReady() {
+    return exec('isInterstitialReady', [])
+  }
 }
 
-export {Interstitial}
+export { Interstitial }

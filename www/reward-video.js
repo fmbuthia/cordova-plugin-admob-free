@@ -1,11 +1,8 @@
-import {buildEvents, exec, translateOptions} from './utils'
+import { buildEvents, exec, translateOptions } from './utils'
 
 /**
  * Reward Video config object.
- * @typedef {Object} RewardVideoConfig
- * @property {string} [id=TESTING_AD_ID] - Ad Unit ID
- * @property {boolean} [isTesting=false] - receiving test ad
- * @property {boolean} [autoShow=false] - auto show ad when loaded
+ * @typedef {BaseConfig} RewardVideoConfig
  */
 
 const events = buildEvents('rewardvideo', [
@@ -27,7 +24,7 @@ class RewardVideo {
 
   /**
    * @protected
-   * @param {RewardVideoConfig} opts - initial config.
+   * @param {RewardVideoConfig} opts - Initial config.
    */
   constructor(opts) {
     this.config({
@@ -37,8 +34,9 @@ class RewardVideo {
 
   /**
    * Update config.
-   * @param {RewardVideoConfig} opts - new config.
-   * @return {RewardVideoConfig} updated config.
+   *
+   * @param {RewardVideoConfig} opts - New config.
+   * @returns {RewardVideoConfig} Updated config.
    */
   config(opts) {
     this._config = {
@@ -49,7 +47,7 @@ class RewardVideo {
   }
 
   /**
-   * @return {Promise}
+   * @returns {Promise} Excutaion result promise.
    */
   prepare() {
     const options = {
@@ -61,11 +59,18 @@ class RewardVideo {
   }
 
   /**
-   * @return {Promise}
+   * @returns {Promise} Excutaion result promise.
    */
   show() {
     return exec('showRewardVideo', [true])
   }
+
+  /**
+   * @returns {Promise} Excutaion result promise.
+   */
+  isReady() {
+    return exec('isRewardVideoReady', [])
+  }
 }
 
-export {RewardVideo}
+export { RewardVideo }
